@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Scr_Player : MonoBehaviour {
 	// Components // Components // Components // Components // Components // Components // Components // Components // Components // Components 
+	[Header("Components")]
 	public CharacterController cCC;
 	public Scr_GunControl cGC;
 
 	// Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables 
+	[Header("Variables")]
 	private float vYSpeed = -1;
 	private Vector3 vDirection = Vector3.zero;
 	public float vSpeedMultiplier = 2f;
 	public float vSpeed = 20f;
 	public bool vActing;
+	public bool vMouseLock;
+	public bool vIsCrouching;
+	public float vCrouch = 1f;
 
 	// Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera 
+	[Header("Camera")]
 	public GameObject ViewBase;
 	public Camera vCam;
 	public GameObject vTargetSpot;
@@ -23,6 +29,10 @@ public class Scr_Player : MonoBehaviour {
 	public float vYaw = 90.0f;
 	public float vPitch = 0.0f;
 
+	public LayerMask vLayer = 1;// << 8;
+	public string lMask;
+
+	// GameObjects // GameObjects // GameObjects // GameObjects // GameObjects // GameObjects // GameObjects // GameObjects // GameObjects 
 
 
 	void Start()
@@ -35,9 +45,30 @@ public class Scr_Player : MonoBehaviour {
 
 	void Update ()
 	{	
+		vIsCrouching = false;
 		if (!vActing)
 			InputCheck ();
+		if (cCC.isGrounded) {
+			if (vYSpeed < -1f)
+			vYSpeed = -1f;
+		}
+		else {if (vYSpeed > -50f)
+			vYSpeed -= .05f;
+		}
 
+		if (vIsCrouching) {
+			if (vCrouch > .5f)
+				vCrouch -= .05f;
+		} else {
+			if (vCrouch < 1f)
+				vCrouch += .05f;
+			else
+				vCrouch = 1f;
+		}
+		//transform.localScale = new Vector3 (1f, vCrouch, 1f);
+		cCC.height = 2f*vCrouch;
+		ViewBase.transform.localPosition = new Vector3 (0,vCrouch, 0f);
+		vDirection.y = vYSpeed;
 		vDirection = transform.TransformDirection (vDirection);
 		cCC.Move(vDirection *vSpeed* Time.deltaTime);
 		vSpeed = 20f;
@@ -45,14 +76,11 @@ public class Scr_Player : MonoBehaviour {
 		ViewBase.transform.eulerAngles = new Vector3 (vPitch,vYaw, 0f);
 		if (transform.position.y < -10)
 			transform.position = Vector3.zero;
-		RaycastHit hit;
-		Ray ray = vCam.ScreenPointToRay ( new Vector2(vCam.pixelWidth/ 2f, vCam.pixelHeight / 2f));//point to ray
-		if (Physics.Raycast (ray, out hit))
-			vTargetSpot.transform.position = hit.point;
-		else
-			vTargetSpot.transform.position = ray.GetPoint(100);
-		Debug.DrawRay (ViewBase.transform.position,ray.direction*100,Color.red);
+
+
+
 	}
+
 
 	void InputCheck(){ // Input // Input // Input // Input // Input // Input // Input // Input // Input 
 		
@@ -65,20 +93,40 @@ public class Scr_Player : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Alpha4))
 			cGC.SwitchGun("Grenade");
 
-		if (Input.GetMouseButtonDown(0))
-			cGC.ShootGun("Rocket");
-		if (Input.GetMouseButtonDown(1))
-			cGC.SwitchGun("Grenade");
-
-		if (Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetMouseButton (0)) {
+			
+			cGC.ShootGun ();
+		}
+		if (Input.GetMouseButtonDown (1)) {
+			if (vMouseLock) {
+				Cursor.lockState = CursorLockMode.None;
+				vMouseLock = false;
+			} else {
+				Cursor.lockState = CursorLockMode.Locked;
+				vMouseLock = true;
+				
+			}
+		}
+		if (Input.GetKey (KeyCode.LeftShift))
 			vSpeed *= vSpeedMultiplier;
+		else if (Input.GetKey (KeyCode.LeftControl)) {
+			vIsCrouching = true;
+			vSpeed *= .5f;
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space) && cCC.isGrounded) {
+			vYSpeed = 1f;
+			Debug.Log ("Jumped");
+		}
+
+
 
 		/// Mouse Input
 		vYaw += vSpedH * Input.GetAxis ("Mouse X");
 		vPitch -= vSpedV * Input.GetAxis ("Mouse Y");
 		if (vPitch > 90f) vPitch = 90f; 			// Clamp
 		if (vPitch < -90f) vPitch = -90f;			// Clamp
-		vDirection = new Vector3(Input.GetAxis("Vertical"),vYSpeed,(Input.GetAxis("Horizontal")*-1f));
+		vDirection = new Vector3(Input.GetAxis("Vertical"),0f,(Input.GetAxis("Horizontal")*-1f));
 
 	}
 }

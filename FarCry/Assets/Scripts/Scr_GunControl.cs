@@ -8,7 +8,20 @@ public class Scr_GunControl : MonoBehaviour {
 	public string vStatus;
 	public float vCoolDown; // 0f = ready;
 	public GameObject tGO; // 0f = ready;
+	public Camera vCam; // 0f = ready;
+	public GameObject ViewBase;
+	public GameObject vSpawnSpot;
+	public LayerMask vLayer;
+	public float vOffSet = 5f;
 
+
+	[Header("Bullet")]
+	public GameObject vBulletA;
+	public GameObject vBulletB;
+	public GameObject vBulletC;
+	public GameObject vBulletD;
+
+	[Header("Weapon")]
 	// Shoocker
 	public GameObject vWeaponA; 		// First Weapon
 	public bool vHasWepA; 				// Has The Weapon
@@ -32,7 +45,15 @@ public class Scr_GunControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (vCoolDown > 0f)
+			vCoolDown -= .2f;
+		else
+		{vCoolDown = 0f;
+				if (vStatus == "Shoot")
+					vStatus = "Ready";
+			}
+				
+			
 	}
 	public void SwitchGun(string tWeapon){
 		tGO = null;
@@ -77,22 +98,53 @@ public class Scr_GunControl : MonoBehaviour {
 		}
 			
 	}
-	public void ShootGun(string tWeapon){
+	public void ShootGun(){
+		RaycastHit tHit;
+		Ray tRay;
+		Vector3 tVect3;
+		float tOff = vOffSet*.5f*(Screen.height / 200);
 		if (vStatus == "FirstAni"){
-			vStatus = "Shoot";
-	}
-		switch (tWeapon) {
+			vStatus = "Ready";
+		}
+		if (vStatus == "Ready")
+		switch (vCurrentWeapon) {
 		case "Shocker":
 			// Poke attack
+
+
 			break;
-		case "Gun":
-			// Shooting
+			case "Gun":
+				tRay = vCam.ScreenPointToRay (new Vector2 ((vCam.pixelWidth / 2f) + (Random.Range (-tOff, tOff) * 2f), (vCam.pixelHeight / 2f) + (Random.Range (-tOff, tOff) * 2f)));
+				tVect3 = ViewBase.transform.eulerAngles;
+				if (Physics.Raycast (tRay, out tHit, 100f, vLayer)) {
+					tGO = Instantiate (vBulletB);
+					tGO.transform.position = tHit.point;
+				}
+				vStatus = "Shoot";
+				vCoolDown = 1f;
 			break;
-		case "Rocket":
-			// Wasabi
+			case "Rocket":
+				int vCount = 20;
+				while (vCount > 0) {
+					tRay = vCam.ScreenPointToRay (new Vector2 ((vCam.pixelWidth / 2f) + (Random.Range (-tOff, tOff) * 5f), (vCam.pixelHeight / 2f) + (Random.Range (-tOff, tOff) * 5f)));
+					Debug.Log (tRay.direction);
+					tVect3 = ViewBase.transform.eulerAngles;
+					if (Physics.Raycast (tRay, out tHit, 100f, vLayer)) {
+						tGO = Instantiate (vBulletB);
+						tGO.transform.position = tHit.point;
+					}
+					vCount -= 1;
+				}
+				vStatus = "Shoot";
+				vCoolDown = 3f;
 			break;
-		case "Grenade":
-			// OK
+			case "Grenade":
+				tGO = Instantiate (vBulletD);
+				tGO.transform.position = vSpawnSpot.transform.position;
+				tGO.transform.localRotation = vSpawnSpot.transform.rotation;
+				tGO.GetComponent<Rigidbody> ().AddForce (tGO.transform.up * 2000f);
+			vStatus = "Shoot";
+			vCoolDown = 1f;
 			break;
 
 		}
