@@ -13,6 +13,7 @@ public class Scr_GunControl : MonoBehaviour {
 	public GameObject vSpawnSpot;
 	public LayerMask vLayer;
 	public float vOffSet = 5f;
+	private Color[] vColors;
 
 
 	[Header("Bullet")]
@@ -41,6 +42,16 @@ public class Scr_GunControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		vColors = new Color[9];
+		vColors [0] = Color.white;
+		vColors [1] = Color.blue;
+		vColors [2] = Color.black;
+		vColors [3] = Color.red;
+		vColors [4] = Color.green;
+		vColors [5] = Color.cyan;
+		vColors [6] = Color.clear;
+		vColors [7] = Color.magenta;
+		vColors [8] = Color.yellow;
 	}
 	
 	// Update is called once per frame
@@ -143,6 +154,8 @@ public class Scr_GunControl : MonoBehaviour {
 				tGO.transform.position = vSpawnSpot.transform.position;
 				tGO.transform.localRotation = vSpawnSpot.transform.rotation;
 				tGO.GetComponent<Rigidbody> ().AddForce (tGO.transform.up * 2000f);
+				Renderer rend = tGO.GetComponentInChildren<Renderer>();
+				rend.material.SetColor("_SpecColor",vColors[Random.Range(0,8)]);
 			vStatus = "Shoot";
 			vCoolDown = 1f;
 			break;
