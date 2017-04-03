@@ -7,6 +7,7 @@ public class Scr_Player : MonoBehaviour {
 	[Header("Components")]
 	public CharacterController cCC;
 	public Scr_GunControl cGC;
+	public GameObject vElevator;
 
 	// Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables // Variables 
 	[Header("Variables")]
@@ -65,6 +66,7 @@ public class Scr_Player : MonoBehaviour {
 			else
 				vCrouch = 1f;
 		}
+
 		//transform.localScale = new Vector3 (1f, vCrouch, 1f);
 		cCC.height = 2f*vCrouch;
 		ViewBase.transform.localPosition = new Vector3 (0,vCrouch, 0f);
@@ -128,5 +130,20 @@ public class Scr_Player : MonoBehaviour {
 		if (vPitch < -90f) vPitch = -90f;			// Clamp
 		vDirection = new Vector3(Input.GetAxis("Vertical"),0f,(Input.GetAxis("Horizontal")*-1f));
 
+
+
+
+
+		if (Input.GetKeyDown (KeyCode.E)) {
+			Debug.Log ("Elevator Button Open");
+			vElevator = GameObject.FindGameObjectWithTag ("Elevator");
+			vElevator.SendMessage ("OpenDoor");
+		}
+
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			Debug.Log ("Elevator Button NextFLoor");
+			vElevator = GameObject.FindGameObjectWithTag ("Elevator");
+			vElevator.SendMessage ("NextFloor",2);
+		}
 	}
 }
