@@ -19,6 +19,7 @@ public class Scr_Player : MonoBehaviour {
 	public bool vMouseLock;
 	public bool vIsCrouching;
 	public float vCrouch = 1f;
+	private bool vPenatrating;
 
 	// Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera // Camera 
 	[Header("Camera")]
@@ -72,6 +73,8 @@ public class Scr_Player : MonoBehaviour {
 		ViewBase.transform.localPosition = new Vector3 (0,vCrouch, 0f);
 		vDirection.y = vYSpeed;
 		vDirection = transform.TransformDirection (vDirection);
+		if (vPenatrating)
+			vSpeed = 1f;
 		cCC.Move(vDirection *vSpeed* Time.deltaTime);
 		vSpeed = 20f;
 		transform.eulerAngles = new Vector3 (0f, vYaw-90f,0f);
@@ -144,6 +147,21 @@ public class Scr_Player : MonoBehaviour {
 			Debug.Log ("Elevator Button NextFLoor");
 			vElevator = GameObject.FindGameObjectWithTag ("Elevator");
 			vElevator.SendMessage ("NextFloor",2);
+		}
+
+
+	}
+
+	void OnTriggerEnter (Collider Other){
+		if (Other.tag == "TightZone") {
+			vPenatrating = true;
+			Debug.Log ("Penetration");
+		}
+
+	}
+	void OnTriggerExit (Collider Other){
+		if (Other.tag == "TightZone") {
+			vPenatrating = false;
 		}
 	}
 }
