@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/Jacob.unity
+=======
+- path: Assets/Scenes/Christ.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
