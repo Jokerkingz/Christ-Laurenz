@@ -65,7 +65,7 @@ public class AI : MonoBehaviour {
 		}
 
 		fpsTargetDistance = Vector3.Distance (fpsTarget.position, transform.position);
-		if (fpsTargetDistance < enemyLookDistance && lookfornew == true) {
+		/*if (fpsTargetDistance < enemyLookDistance && lookfornew == true) {
 			myRender.material.color = Color.yellow;
 			findCover ();
 			lookfornew = false;
@@ -77,6 +77,7 @@ public class AI : MonoBehaviour {
 		} else {
 			myRender.material.color = Color.blue;
 		}
+		*/
 	}
 
 	//is actually "see player and find cover"
@@ -89,7 +90,7 @@ public class AI : MonoBehaviour {
 		Transform bestTarget = GetClosestCover (gos.GetComponents<Transform> ()/*to change number of possible covers, add ",#"*/);
 
 		goHere = bestTarget.GetChild(0).gameObject; 
-		sm.StartAttack ();
+		//sm.StartAttack ();
 		Debug.Log (bestTarget.position);
 		//findActualCover ();
 	}
