@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Sce_1stFloor.unity
+- path: Assets/lobbyfix.unity
   isLoaded: 1
   isActive: 1
