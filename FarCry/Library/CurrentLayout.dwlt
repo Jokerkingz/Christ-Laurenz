@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 72
+  controlID: 74
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 73
+  controlID: 75
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 74
+  controlID: 76
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -324,19 +324,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/Materials/Textures
+    - Assets/Models/Mugs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models/Materials/Textures
+  - Assets/Models/Mugs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/DylanRosenthal/Desktop/FPS GAME MF/FarCryOnHub/FarCry
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 151}
-    m_SelectedIDs: 642a0000
-    m_LastClickedID: 10852
-    m_ExpandedIDs: 00000000c6240000922500005c260000bc26000060290000de290000fa29000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 261.0067}
+    m_SelectedIDs: f4250000
+    m_LastClickedID: 9716
+    m_ExpandedIDs: 00000000c62400009425000062260000c226000068290000e8290000042a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c6240000922500005c260000bc26000060290000de290000fa290000
+    m_ExpandedIDs: 00000000c62400009425000062260000c226000068290000e8290000042a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,10 +479,10 @@ MonoBehaviour:
     width: 282
     height: 421
   m_TreeViewState:
-    scrollPos: {x: 0, y: 224}
-    m_SelectedIDs: 6a6dfeff0275feffbc72feffd073feff7cb9000048ba0000e6b6000014b8000028b8000072b80000
-    m_LastClickedID: -101118
-    m_ExpandedIDs: 767afeff9c93feffbcacfeffa2c6feffd2d2feff14f9feff820dffff6a26fffff238ffff3251ffff6063fffffc75ffff2688ffff4a9cffff38a1ffff38b4ffff86d9ffffe4fbffff00000000b0820000
+    scrollPos: {x: 0, y: 32}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 6eacfeffe4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -25.549232, y: 5.1493435, z: -50.39543}
+    m_Target: {x: -18.89892, y: -0.43823862, z: -39.61998}
     speed: 2
-    m_Value: {x: -25.549232, y: 5.1493435, z: -50.39543}
+    m_Value: {x: -18.89892, y: -0.43823862, z: -39.61998}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -562,13 +562,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.013290719, y: 0.2734354, z: -0.0037782385, w: -0.96179116}
+    m_Target: {x: 0.0426233, y: -0.9505601, z: 0.15127683, w: 0.2678325}
     speed: 2
-    m_Value: {x: -0.013290719, y: 0.2734354, z: -0.0037782385, w: -0.96179116}
+    m_Value: {x: 0.0426233, y: -0.9505601, z: 0.15127683, w: 0.2678325}
   m_Size:
-    m_Target: 7.7481527
+    m_Target: 19.046137
     speed: 2
-    m_Value: 7.7481527
+    m_Value: 19.046137
   m_Ortho:
     m_Target: 0
     speed: 2
