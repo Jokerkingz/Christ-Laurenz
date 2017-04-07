@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 5
-    y: 45
+    x: 23
+    y: 47
     width: 1440
     height: 762
   m_ShowMode: 4
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 101
+  controlID: 104
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -333,10 +333,10 @@ MonoBehaviour:
   m_LastProjectPath: /Users/DylanRosenthal/Desktop/FPS GAME MF/FarCryOnHub/FarCry
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 261.0067}
-    m_SelectedIDs: 402a0000
-    m_LastClickedID: 10816
-    m_ExpandedIDs: 00000000c62400009425000062260000c226000068290000ea290000062a000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 151}
+    m_SelectedIDs: 962a0000
+    m_LastClickedID: 10902
+    m_ExpandedIDs: 00000000c6240000ae25000084260000e8260000a4290000322a0000502a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -352,7 +352,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c62400009425000062260000c226000068290000ea290000062a0000
+    m_ExpandedIDs: 00000000c6240000ae25000084260000e8260000a4290000322a0000502a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 236.01636}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 115
 --- !u!114 &14
@@ -479,10 +479,10 @@ MonoBehaviour:
     width: 282
     height: 420
   m_TreeViewState:
-    scrollPos: {x: 0, y: 432}
-    m_SelectedIDs: 14320000
-    m_LastClickedID: 12820
-    m_ExpandedIDs: e4fbffff00000000a82d0000902e0000042f0000
+    scrollPos: {x: 0, y: 5565}
+    m_SelectedIDs: aa3bfeff
+    m_LastClickedID: -115798
+    m_ExpandedIDs: 7491feffecabfeff2af2feffe4fefeff6ce3ffffe4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.895519, y: 3.355026, z: -27.197723}
+    m_Target: {x: 21.664251, y: 3.6443367, z: -43.922844}
     speed: 2
-    m_Value: {x: 11.895519, y: 3.355026, z: -27.197723}
+    m_Value: {x: 21.664251, y: 3.6443367, z: -43.922844}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -562,13 +562,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.0050476333, y: 0.7638433, z: -0.0059756017, w: -0.6453543}
+    m_Target: {x: -0.04189884, y: -0.13900883, z: 0.0058859293, w: -0.98938686}
     speed: 2
-    m_Value: {x: -0.005047634, y: 0.76384336, z: -0.005975602, w: -0.64535433}
+    m_Value: {x: -0.04189884, y: -0.13900883, z: 0.0058859293, w: -0.98938686}
   m_Size:
-    m_Target: 9.58582
+    m_Target: 14.583306
     speed: 2
-    m_Value: 9.58582
+    m_Value: 14.583306
   m_Ortho:
     m_Target: 0
     speed: 2
