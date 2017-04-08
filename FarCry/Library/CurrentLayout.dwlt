@@ -314,7 +314,7 @@ MonoBehaviour:
     width: 1146
     height: 250
   m_SearchFilter:
-    m_NameFilter: alic
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -324,19 +324,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/Materials/Posters/Posters for Game
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models/Materials/Posters/Posters for Game
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/DylanRosenthal/Desktop/FPS GAME MF/FarCryOnHub/FarCry
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 151}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c6240000bc2500009e26000004270000d8290000762a00009a2a000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c6240000
+    m_LastClickedID: 9414
+    m_ExpandedIDs: 00000000c6240000bc2500009e26000004270000dc2900007a2a00009e2a00001e3a0000fc3d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c6240000bc2500009e26000004270000d8290000762a00009a2a0000
+    m_ExpandedIDs: 00000000c6240000bc2500009e26000004270000dc2900007a2a00009e2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,10 +479,10 @@ MonoBehaviour:
     width: 282
     height: 420
   m_TreeViewState:
-    scrollPos: {x: 0, y: 1568}
-    m_SelectedIDs: ca95ffff
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: bce1ffffe4fbffff00000000c23c0000
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.002889519, y: 0.99695414, z: -0.06322177, w: 0.045575645}
     speed: 2
-    m_Value: {x: 0.002889519, y: 0.99695414, z: -0.06322177, w: 0.045575645}
+    m_Value: {x: 0.0028895193, y: 0.99695414, z: -0.06322177, w: 0.045575645}
   m_Size:
     m_Target: 159.49828
     speed: 2
